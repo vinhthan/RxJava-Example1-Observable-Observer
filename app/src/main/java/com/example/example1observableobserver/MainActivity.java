@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         Observer<String> footbalPlayesObserver = getFootballPlayesObserver();
 
         //observer subcribing to observable
-        footballPlayesObservable.observeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
+        footballPlayesObservable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(footbalPlayesObserver);
     }
 
